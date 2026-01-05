@@ -1,16 +1,20 @@
-LTE CQI Prediction using Machine Learning
-This project simulates an LTE downlink scenario to analyze the relationship between user position, Signal-to-Noise Ratio (SNR), and Channel Quality Indicator (CQI). It compares the performance of two Machine Learning models in predicting the CQI based on channel conditions.
+# LTE CQI Prediction with Machine Learning
 
-Key Features
-Simulation: Generates synthetic user distribution and calculates Path Loss/SNR based on LTE standards (20 MHz BW).
+This repository contains a MATLAB simulation of an LTE downlink scenario. The goal is to predict the **Channel Quality Indicator (CQI)** based on user position and signal conditions using Machine Learning algorithms.
 
-Models Compared:
+##  Key Features
+* **LTE Physics Simulation:** Implements Path Loss models, Log-Normal Shadowing, and SNR calculation based on standard LTE parameters (20 MHz BW).
+* **Machine Learning Comparison:** Compares the performance of two regression models:
+  * Linear Regression (`fitlm`)
+  * Decision Trees (`fitrtree`)
+* **Metrics:** Evaluates accuracy using Root Mean Square Error (RMSE).
 
-Linear Regression (fitlm)
+## Tech Stack
+* MATLAB
+* Statistics and Machine Learning Toolbox
 
-Decision Tree (fitrtree)
-
-Metrics: Root Mean Square Error (RMSE) validation.
-
-Technologies
-MATLAB (Statistics and Machine Learning Toolbox)
+##  How it works
+1. **Data Generation:** Users are randomly distributed in a cell.
+2. **Channel Modeling:** Path loss and shadowing are applied to calculate Received Power and SNR.
+3. **Training:** The dataset is split (70/30) to train the models.
+4. **Evaluation:** RMSE is calculated over multiple simulation rounds to ensure statistical stability.
